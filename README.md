@@ -3,6 +3,7 @@ Infrastructure Coding Test
 
 **Creation of Web Server:**
 Spin up EC2 instance using terraform scripts provided in the repository by following below commands
+
       1) terraform init //to Initialize a terraform workspace with needed providers
       2) terraform validate // to validate the configuration changes
       3) terraform plan // to get the detailed description of what changes will be made once changes are executed.
@@ -30,6 +31,7 @@ Spin up EC2 instance using terraform scripts provided in the repository by follo
      
      We can make it run periodically by setting up crontab in the external system. 
                use **crontab -e** to create a new crontab and add below entry  
+               
                */5 * * * * sh statusChecker.sh  //this will check the status every 5 minutes
  
  
@@ -37,7 +39,9 @@ Spin up EC2 instance using terraform scripts provided in the repository by follo
  
         1) Terraform is used to provision entire instrastructure
         2) Load balancer is created using terraform and target groups are created and attached using terraform
+        
               LB URL -> http://nginx-lb-1644501197.us-east-2.elb.amazonaws.com/version.txt
+              
         3) Created Docker File with nginx image that serves version.txt file which is available under docker folder.
         4) StatusChecker script checks server status if it is down. It will start the nginx service by ssh into the instance.
  
